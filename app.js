@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use('/api', userRouting)
 
-if(process.env.NODE_ENV !== "production")
-    swaggerDocs(app,3000)
+const isVercel = !!process.env.VERCEL; 
 
+swaggerDocs(app, isVercel ? null : 3000);
 module.exports = app;
