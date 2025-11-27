@@ -6,6 +6,7 @@ const { swaggerDocs } = require("./swagger");
 const app = express();
 
 app.use(express.json());
+
 app.use('/api', userRouting);
 
 app.get("/", (req, res) => {
