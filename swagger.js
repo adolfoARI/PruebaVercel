@@ -1,6 +1,5 @@
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
-
 const options = {
   definition: {
     openapi: '3.0.0',
@@ -11,9 +10,7 @@ const options = {
     },
     servers: [
       {
-        url: process.env.NODE_ENV === 'production'
-          ? 'https://prueba-vercel-d3v304cmc-johel-adolfo-vargas-sandovals-projects.vercel.app/api'
-          : 'http://localhost:3000/api',
+        url: 'http://localhost:3000/api',
       },
     ],
     components:{
@@ -31,17 +28,12 @@ const options = {
       }
     ]
   },
-  apis: ['./routes/*.js'], 
+  apis: ['./routes/*.js'], // Ruta donde Swagger busca tus endpoints
 };
-
 const swaggerSpec = swaggerJsdoc(options);
-
-function swaggerDocs(app) {
+function swaggerDocs(app, port) {
+  
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-
-  if (process.env.NODE_ENV !== 'production') {
-    console.log(`Swagger local listo en http://localhost:3000/api-docs`);
-  }
+  console.log(`Swagger listo en: http://localhost:${port}/api-docs`);
 }
-
-module.exports = { swaggerDocs };
+module.exports = { swaggerDocs }
