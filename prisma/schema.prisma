@@ -9,10 +9,9 @@ datasource db {
 }
 
 model User {
-    id       Int     @id @default(autoincrement())
+    id       Int    @id @default(autoincrement())
     username String  @unique
     password String
-    state    Boolean
-    name     String
+    state    Boolean   
     @@map("usersvla")
 }

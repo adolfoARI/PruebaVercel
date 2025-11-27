@@ -13,7 +13,6 @@ model User {
   username String  @unique
   password String
   state    Boolean
-  name     String
 
   @@map("usersvla")
 }
