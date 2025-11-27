@@ -12,6 +12,6 @@ app.get("/", (req, res) => {
   res.send("API funcionando correctamente");
 });
 
-swaggerDocs(app,  3000);
+swaggerDocs(app);
 
 module.exports = app;
