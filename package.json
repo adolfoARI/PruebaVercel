@@ -7,7 +7,8 @@
     "test": "jest",
     "dev": "nodemon server.js",
     "vercel-build": "prisma generate",
-    "build" : "npm run vercel-build"
+    "build" : "npm run vercel-build",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
