@@ -1,7 +1,7 @@
 
-// api/index.js
 const serverless = require("serverless-http");
-const app = require("../app"); // importar app.js explícitamente
+const app = require("../app");
+
 
 module.exports = serverless(app);
 
