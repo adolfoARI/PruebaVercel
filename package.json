@@ -1,18 +1,13 @@
+
 {
-  "name": "api",
+  "name": "PruebaVercel",
   "version": "1.0.0",
-  "description": "",
-  "main": "api/index.js",
+  "private": true,
+  "type": "commonjs",
   "scripts": {
-    "test": "jest",
     "dev": "nodemon server.js",
-    "vercel-build": "prisma generate",
-    "build" : "npm run vercel-build",
-    "start": "node index.js"
+    "test": "jest"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@prisma/client": "^5.16.0",
     "dotenv": "^17.2.3",
@@ -28,5 +23,6 @@
   "devDependencies": {
     "jest": "^30.2.0",
     "nodemon": "^3.1.0"
-  }
+  },
+  "postinstall": "prisma generate"
 }
